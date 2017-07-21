@@ -5,7 +5,8 @@ using UnityEngine;
 public class ItemCollect : MonoBehaviour {
 	[SerializeField] private string itemName;
 	
-	void OnTriggerEnter (Collider2D other) {			//TODO FIX THIS ASAP
+	void OnTriggerEnter2D (Collider2D other) {
+		Debug.Log ("Object collected:" + itemName);
 		Destroy (this.gameObject);
 	}
 }

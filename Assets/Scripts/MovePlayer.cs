@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum MovementType
-{
-    Mobile,
-    Desktop
-}
+enum MovementType{Mobile, Desktop}
 
 public class MovePlayer : MonoBehaviour {
 	public float speed = 50f;
@@ -27,10 +23,9 @@ public class MovePlayer : MonoBehaviour {
 
 	void Update() {
 
-        switch (type) {
+        /*switch (type) {
             
             case MovementType.Mobile:
-
                 // TODO make mobile movement less shitty
                 if (moveLeft && !moveRight)
                 {
@@ -43,14 +38,14 @@ public class MovePlayer : MonoBehaviour {
                 }
                 break;
             
-            case MovementType.Desktop:
-                playerRigidbody.AddForce(Vector2.right * speed * Input.GetAxis("Horizontal") * Time.deltaTime);
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-                }
-                break;
+            case MovementType.Desktop:*/
+       	playerRigidbody.AddForce(Vector2.right * speed * Input.GetAxis("Horizontal") * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+		playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
         }
+		//break;
+        //}
 
 
 
@@ -58,17 +53,21 @@ public class MovePlayer : MonoBehaviour {
 
 	public void MoveLeft() {
 		moveLeft = true;
+		Debug.Log ("MOVING LEFT");
 	}
 
 	public void StopLeft() {
 		moveLeft = false;
+		Debug.Log ("STOP LEFT");
 	}
 
 	public void MoveRight() {
 		moveRight = true;
+		Debug.Log ("MOVE RIGHT");
 	}
 
 	public void StopRight() { 
 		moveRight = false;
+		Debug.Log ("STOP RIGHT");
 	}
 }

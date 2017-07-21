@@ -6,25 +6,35 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 	public Canvas mainCanvas;
 	public Canvas exitCanvas;
-	public Button desert;
-	public Button exit;
+	public Canvas biomeCanvas;
+	public Button biome;
+	public Button quit;
 
 	// Use this for initialization
 	void Start () {
 		mainCanvas = mainCanvas.GetComponent<Canvas> ();
 		exitCanvas = exitCanvas.GetComponent<Canvas> ();
-		desert = desert.GetComponent<Button> ();
-		exit = exit.GetComponent<Button> ();
+		biomeCanvas = biomeCanvas.GetComponent<Canvas> ();
+		biome = biome.GetComponent<Button> ();
+		quit = quit.GetComponent<Button> ();
+
+		biomeCanvas.enabled = false;
 
 	}
 	
-	public void exitPress() {
+	public void quitPress() {
 		//TODO exit pressing system, bring exit canvas
 
 	}
 
+	public void biomePress() {
+		biomeCanvas.enabled = true;
+		mainCanvas.enabled = false;
+	}
+
 	public void desertGame() {
 		SceneManager.LoadScene (1);
+		Debug.Log ("'tis loaded");
 
 	}
 

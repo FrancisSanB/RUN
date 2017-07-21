@@ -47,9 +47,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera.cs" />
-     <Compile Include="Assets\Scripts\CoinCollect.cs" />
+     <Compile Include="Assets\Scripts\ItemCollect.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
+     <Compile Include="Assets\Scripts\MovePlayerMobile.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
