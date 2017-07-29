@@ -4,48 +4,51 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
+
 	public Canvas mainCanvas;
-	public Canvas exitCanvas;
+	public RectTransform exitPanel;
 	public Canvas biomeCanvas;
 	public Button biome;
 	public Button quit;
 
 	// Use this for initialization
-	void Start () {
-		mainCanvas = mainCanvas.GetComponent<Canvas> ();
-		exitCanvas = exitCanvas.GetComponent<Canvas> ();
-		biomeCanvas = biomeCanvas.GetComponent<Canvas> ();
-		biome = biome.GetComponent<Button> ();
-		quit = quit.GetComponent<Button> ();
-
+	void Start()
+    { 
 		biomeCanvas.enabled = false;
-
 	}
 	
-	public void quitPress() {
-		//TODO exit pressing system, bring exit canvas
-
+	public void QuitPress() {
+        exitPanel.gameObject.SetActive(true);
 	}
 
-	public void biomePress() {
+    public void ConfirmQuit()
+    {
+        Application.Quit();
+    }
+
+    public void CloseQuitPanel()
+    {
+        exitPanel.gameObject.SetActive(false);
+    }
+
+	public void BiomePress() {
 		biomeCanvas.enabled = true;
 		mainCanvas.enabled = false;
 	}
 
-	public void desertGame() {
-		SceneManager.LoadScene (1);
-		Debug.Log ("'tis loaded");
+	public void LoadSceneNumber(int number)
+    {
+        SceneManager.LoadScene(number);
+        Debug.Log("Loaded scene number: " + number);
+    }
 
-	}
-
-	public void storePress() {
+	public void StorePress() {
 		//TODO make a store, in another update
 
 	}
 
-	public void creditsPress() {
+	public void CreditsPress() {
 		//TODO make a credits in the before release MAKE SURE IT INCLUDES THE FONT
 		//dafont.com/lemon-milk.font 
-
 	}
 }
