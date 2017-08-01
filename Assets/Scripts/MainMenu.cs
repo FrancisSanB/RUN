@@ -10,12 +10,13 @@ public class MainMenu : MonoBehaviour {
 	public Canvas biomeCanvas;
 	public Button biome;
 	public Button quit;
+    public GameObject creditsCanvas;
 
 	// Use this for initialization
 	void Start()
-    { 
-		biomeCanvas.enabled = false;
-	}
+    {
+        biomeCanvas.gameObject.SetActive(false);
+    }
 	
 	public void QuitPress() {
         exitPanel.gameObject.SetActive(true);
@@ -32,8 +33,8 @@ public class MainMenu : MonoBehaviour {
     }
 
 	public void BiomePress() {
-		biomeCanvas.enabled = true;
-		mainCanvas.enabled = false;
+		biomeCanvas.gameObject.SetActive(true);
+		mainCanvas.gameObject.SetActive(false);
 	}
 
 	public void LoadSceneNumber(int number)
@@ -48,7 +49,17 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void CreditsPress() {
-		//TODO make a credits in the before release MAKE SURE IT INCLUDES THE FONT
-		//dafont.com/lemon-milk.font 
+        //TODO make a credits in the before release MAKE SURE IT INCLUDES THE FONT
+        //dafont.com/lemon-milk.font 
+
+        // Make main menu invisible first
+        mainCanvas.gameObject.SetActive(false);
+        creditsCanvas.SetActive(true);
 	}
+
+    public void ExitCredits()
+    {
+        creditsCanvas.SetActive(false);
+        mainCanvas.gameObject.SetActive(true);
+    }
 }
