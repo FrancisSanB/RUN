@@ -1,0 +1,28 @@
+
+
+
+RUN
+
+-- Developers --
+Francis Fernandez
+Joshua You
+
+-- Pixel Artists --
+Kyle Nagasawa
+
+-- Level Designers --
+Prash
+
+-- Music --
+Karen Yuan
+
+
+
+-- Tools Used --
+Unity 2017.1.0
+Piskel
+Photoshop
+
+-- Resources --
+Lemonmilk Font
+(dafont.com/lemon-milk.font)
